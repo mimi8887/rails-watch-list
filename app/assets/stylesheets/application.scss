@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+#banner {
+  background-image: url("/app/assets/images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
+  background-size: cover;
+}
