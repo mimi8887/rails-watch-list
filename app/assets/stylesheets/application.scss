@@ -12,6 +12,22 @@
 @import "pages/index";
 
 #banner {
-  background-image: url("/app/assets/images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
+  background-image: asset-url("felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
   background-size: cover;
+  background-position: bottom ;
+  height: 800px;
+  display: flex; /* Enables flex layout */
+  flex-direction: column; /* Ensures items are aligned vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  p {
+    color: white;
+    text-align: center;
+    font-size: 26px;
+  }
 }
