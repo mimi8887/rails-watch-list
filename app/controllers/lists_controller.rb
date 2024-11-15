@@ -7,7 +7,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @movies = @list.movies
     @movies_all = Movie.all
-    @bookmark = Bookmark.new()
+    @bookmark = Bookmark.new
     # @bookmark.save
     # redirect_to list_path(@list)
   end

@@ -1,14 +1,17 @@
 <h1><%= @list.name %></h1>
 
-<% @movies.each do |movie| %>
+<% @list.movies.each do |movie| %>
 <ul>
-<li><%= movie.title %></li>
+<li>
+<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+<%= movie.title %> <%= link_to raw('<i class="fa-solid fa-trash"></i>'), bookmark_path(bookmark), data:{turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+</li>
 </ul>
 <% end %>
 
 <p class="mt-5">Add a movie to your list:</p>
  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :movie, collection: Movie.all %>
+    <%= f.association :movie, prompt: 'Choose your movie', collection: Movie.all %>
     <%= f.input :comment %>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>
